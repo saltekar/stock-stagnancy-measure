@@ -7,17 +7,6 @@ from markupsafe import Markup
 from stock_stagnancy_research import StockStagnancyResearch
 from stock_general_research import StockGeneralResearcher
 import stagnancy_graph
-import threading
-import time
-import random
-
-
-def foo(s):
-    time.sleep(s)
-
-
-for x in range(4):
-    threading.Thread(target=foo, args=(x, random.random())).start()
 
 app = Flask(__name__)
 
