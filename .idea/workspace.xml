@@ -11,7 +11,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="flask_mapper.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="flask_mapper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flask_mapper.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
@@ -93,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stock_stagnancy_research.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="stock_stagnancy_research.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stock_stagnancy_research.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+            <state relative-caret-position="2730">
+              <caret line="182" lean-forward="true" selection-start-line="182" selection-end-line="182" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -192,7 +192,6 @@
         <option value="$PROJECT_DIR$/templates/error.html" />
         <option value="$PROJECT_DIR$/templates/result.html" />
         <option value="$PROJECT_DIR$/templates/stagnancy_researcher.html" />
-        <option value="$PROJECT_DIR$/stock_stagnancy_research.py" />
         <option value="$PROJECT_DIR$/static/resume_style.css" />
         <option value="$PROJECT_DIR$/static/syntax.css" />
         <option value="$PROJECT_DIR$/static/resume_syntax.css" />
@@ -225,6 +224,7 @@
         <option value="$PROJECT_DIR$/templates/resume.html" />
         <option value="$PROJECT_DIR$/templates/about.html" />
         <option value="$PROJECT_DIR$/flask_mapper.py" />
+        <option value="$PROJECT_DIR$/stock_stagnancy_research.py" />
       </list>
     </option>
   </component>
@@ -295,7 +295,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.website_researcher">
+  <component name="RunManager" selected="Python.stock_stagnancy_research">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="stock_researcher" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -395,8 +395,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.website_researcher" />
         <item itemvalue="Python.stock_stagnancy_research" />
+        <item itemvalue="Python.website_researcher" />
         <item itemvalue="Python.stagnancy_graph" />
         <item itemvalue="Python.stock_general_research" />
         <item itemvalue="Python.main" />
@@ -420,11 +420,11 @@
     <frame x="0" y="23" width="1440" height="822" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15277778" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.15277778" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.328877" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.2446524" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.2446524" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Python Console" order="0" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
@@ -635,16 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock_stagnancy_research.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/resume_syntax27.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -716,6 +706,16 @@
           <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock_stagnancy_research.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2730">
+          <caret line="182" lean-forward="true" selection-start-line="182" selection-end-line="182" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

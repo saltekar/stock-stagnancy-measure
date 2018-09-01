@@ -1,6 +1,7 @@
 import requests
 from bdateutil import isbday, relativedelta
 import holidays
+from datetime import date
 
 
 class StockStagnancyResearch:
@@ -81,16 +82,11 @@ class StockStagnancyResearch:
         month = int(current_date[5:7])
         day = int(current_date[8:10])
 
-        # Changes date based on past_months.
-        if past_months > 11:  # Changes year based on past_months.
-            year -= int(past_months / 12)
-            past_months %= 12
+        begin_date = date(year, month, day)-relativedelta(months=past_months)
 
-        if (month - past_months) < 1:  # Changes month and year (if necessary) based on past_months.
-            year -= 1
-            month = 12 - abs(month - past_months)
-        else:
-            month -= past_months
+        year = begin_date.year
+        month = begin_date.month
+        day = begin_date.day
 
         # Changes single digit to double.
         if len(str(month)) is 1:
@@ -102,7 +98,7 @@ class StockStagnancyResearch:
         # Date changes format.
         start_date = str(year) + "-" + str(month) + "-" + str(day)
 
-        # Checks to make sure start date is a bossiness day, if not moves to next business day.
+        # Checks to make sure start date is a business day, if not moves to next business day.
         if not isbday(start_date, holidays=holidays.US()):
             start_date += relativedelta(bdays=+1, holidays=holidays.US())
 
@@ -116,8 +112,8 @@ class StockStagnancyResearch:
 
         dict_data = self.stock_dates
 
-        for date in dict_data.keys():
-            dates.append(date)
+        for date_ in dict_data.keys():
+            dates.append(date_)
 
         return dates
 
