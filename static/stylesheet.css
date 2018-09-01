@@ -1,0 +1,112 @@
+h1 {
+    text-align:center;
+    font-size: 42px;
+    font-weight: bold;
+    padding-bottom: 12px;
+    border-bottom: 3px solid currentColor;
+}
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 1450px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    adding-top: 20px;
+    height: 100%;
+    background-color: #f1f1f1;
+
+}
+
+/* Set black background color, white text and some padding */
+footer {
+    background-color: #555;
+    color: white;
+    padding-top: 8px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+    .row.content {height:auto;}
+}
+
+img {
+    padding-bottom: 4px !important;
+}
+
+form {
+    padding: 8px !important;
+}
+
+label {
+    color: #D3D3D3 !important;
+}
+
+h5 {
+    font-weight: bold;
+    padding-left: 20px;
+    margin-bottom: 3px;
+    margin-top: -4px;
+}
+
+h4 {
+    padding-left: 20px;
+    padding-bottom:10px;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.margin-custom-h5 {
+    padding-top: 0px;
+    margin-bottom: 1em;
+    margin-top: -4px;
+}
+
+.margin-index {
+    margin-top: -20px;
+}
+
+ul {
+    margin-top: -4px;
+}
+
+.graph {
+    padding-bottom: 25px;
+}
+
+label {
+    margin-right: 3px;
+    margin-left: 15px;
+}
+
+.btn {
+    margin-left: 15px;
+}
+
+p {
+    font-size: 17px;
+}
+
+.font-17 {
+    font-size: 17px;
+}
+
+a {
+    font-size: 15px;
+}

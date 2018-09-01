@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Stagnancy Report</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://d14fo0winaifog.cloudfront.net/plotly-basic.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <title>{{ticker_symbol}} Stock Report</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                </button>
+            <a class="navbar-brand" href="/stagnancy-researcher">
+                <img src="{{ url_for('static', filename='favicon.ico') }}" width="28" height="30">
+            </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="/stagnancy-researcher">Search</a></li>
+                    <li class="active"><a href="#">Report</a></li>
+                    <li><a href="/stagnancy-researcher/about">About</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <form method="POST" action="/stagnancy-researcher" class="form-inline">
+                            <div class="form-group mx-5">
+                                <label for="ticker_symbol" class="mx-2">Enter ticker symbol:</label>
+                                <input type="ticker_symbol" class="form-control" name="ticker_symbol" id="ticker_symbol">
+                            </div>
+                            <div class="form-group mx-5">
+                                <label for="past_months" class="mx-2">Enter past months:</label>
+                                <input type="past_months" class="form-control" name="past_months" id="past_months">
+                            </div>
+                            <div class="form-group mx-5" onclick="$('#loading').show();">
+                                <input class="btn btn-primary" type="submit" value="Get Report" id="submit">
+                            </div>
+                    </form>
+                </ul>
+             </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+            </div>
+
+            <div class="col-sm-8 text-left">
+                <h1 class="text-center">{{company_name}} Stagnancy Report</h1>
+
+                <div class="col-sm-6 text-center">
+                    <h3>General Data:</h3>
+                </div>
+
+                <div class="col-sm-6 text-right">
+                    <h2>Stagnancy Index:</h2>
+                </div>
+
+                <div class="col-sm-3 text-left">
+                    <div class="margin-custom-h5">
+                        <h5>Current Price: {{price}}</h5>
+                    </div>
+
+                    <h5>Valuation Measures</h5>
+                    <ul>
+                        <li>Market Cap: {{market_cap}}</li>
+                        <li>PE Ratio: {{pe_ratio}}</li>
+                    </ul>
+
+                    <h5>Stock Price History</h5>
+                    <ul>
+                        <li>Beta: {{beta}}</li>
+                        <li>52 Week High: {{week52_high}}</li>
+                        <li>52 Week Low: {{week52_low}}</li>
+                        <li>50 Day Moving Avg: {{day50_moving_avg}}</li>
+                        <li>200 Day Moving Avg: {{day200_moving_avg}}</li>
+                    </ul>
+
+                    <h5>Dividends</h5>
+                    <ul>
+                        <li>Dividend Rate: {{dividend_rate}}</li>
+                        <li>Dividend Yield: {{dividend_yield}}</li>
+                        <li>Ex-Dividend Date: {{ex_dividend_date}}</li>
+                    </ul>
+
+                </div>
+                <div class="col-sm-5 text-left">
+
+                    <h5>Finances (Trailing 12 Months)</h5>
+                    <ul>
+                        <li>Return on Assets: {{return_assets}}%</li>
+                        <li>Revenue: {{revenue}}</li>
+                        <li>Revenue Per Share: {{revenue_per_share}}</li>
+                        <li>Gross Profit: {{gross_profit}}</li>
+                        <li>EBITDA: {{ebitda}}</li>
+                        <li>Latest EPS: {{latest_eps}}</li>
+                        <li>Cash: {{cash}}</li>
+                        <li>Debt: {{debt}}</li>
+                    </ul>
+
+                    <h5>Share Statistics</h5>
+                    <ul>
+                        <li>Average Volume: {{avg_volume}} (Last {{past_months}} months)</li>
+                        <li>Shares Outstanding: {{shares_outstanding}}</li>
+                        <li>Short Interest: {{short_interest}}</li>
+                        <li>Short Ratio: {{short_ratio}}</li>
+                    </ul>
+
+                </div>
+
+                <div class="col-sm-4 text-right">
+                    <div class="margin-index">
+                        <h3>{{stagnancy_index}}</h3>
+                    </div>
+                </div>
+                <div class="col-sm-12 graph">{{ graph_custom }}</div>
+                <div class="col-sm-12 graph">{{ graph_timeseries }}</div>
+            </div>
+
+            <div class="col-sm-2 sidenav">
+                <div class="text-align: center" id="loading" style="display:none;">
+                    <img src="{{ url_for('static', filename='loading_img.gif') }}" alt="" />
+                    <div class="text-align: center">Loading...</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+        <p><b><a href="https://github.com/saltekar/stagnancy-stock-researcher">Link to Github Repository</a></b></p>
+    </footer>
+
+</body>
+</html>
