@@ -1,5 +1,6 @@
 appnope==0.1.0
 backcall==0.1.0
+bdateutil==0.1
 bleach==2.1.4
 certifi==2018.4.16
 chardet==3.0.4
@@ -8,6 +9,7 @@ decorator==4.3.0
 entrypoints==0.2.3
 Flask==1.0.2
 gunicorn==19.9.0
+holidays==0.9.6
 html5lib==1.0.1
 idna==2.6
 ipykernel==4.8.2
@@ -38,7 +40,7 @@ prometheus-client==0.3.1
 prompt-toolkit==1.0.15
 ptyprocess==0.6.0
 Pygments==2.2.0
-python-dateutil==2.7.3
+python-dateutil==2.2
 pytz==2018.5
 pyzmq==17.1.2
 qtconsole==4.4.1
