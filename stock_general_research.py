@@ -43,7 +43,7 @@ class StockGeneralResearcher:
             if not isinstance(data[type_num], str):
                 data[type_num] = self.int_format(float(data[type_num]))
 
-        if not isinstance(data[data_type], str):
+        if isinstance(data[data_type], float):
             data[data_type] = round(data[data_type], 2)
 
         return data[data_type]

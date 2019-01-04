@@ -92,12 +92,17 @@ def error():
 
 @app.errorhandler(404)
 def page_not_found():
-    return redirect(url_for('.error', error=ERROR404))
+    return render_template('error.html', error=ERROR404)
 
 
 @app.errorhandler(500)
 def server_error():
-    return redirect(url_for('.error', error=ERROR500))
+    return render_template('error.html', error=ERROR500)
+
+
+@app.errorhandler(Exception)
+def default_error(e):
+    return render_template('error.html', error='Error')
 
 
 def get_graphs(ticker_symbol, past_months, stock_stagnancy):
