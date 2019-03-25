@@ -85,7 +85,7 @@ def about():
 
 @app.route('/img')
 def img():
-    return render_template('about_page.png')
+    return render_template('/static/about_page.png')
 
 
 @app.route('/stagnancy-researcher/error')
