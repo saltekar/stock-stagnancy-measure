@@ -83,11 +83,6 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/img')
-def img():
-    return render_template('/static/about_page.png')
-
-
 @app.route('/stagnancy-researcher/error')
 def error():
     msg = request.args['error']
