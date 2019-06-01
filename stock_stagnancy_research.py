@@ -19,6 +19,7 @@ class StockStagnancyResearch:
         self.ticker_symbol = ticker_symbol
         self.stock_dates = self.get_stock_json()
         self.past_data_close = self.get_data(months, "4. close")  # Gets closing data for past months given by user
+        self.recent_price = self.past_data_close[0]
         self.past_data_vol = self.get_data(months, "5. volume")  # Gets volume data for past months given by user
 
     def get_stock_json(self):

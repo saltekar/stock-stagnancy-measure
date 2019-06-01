@@ -10,7 +10,7 @@ def get_graph(ticker_symbol, high_data, low_data, dates):
     :param low_data: data for stock lows
     :param high_data: data for stock highs
     """
-    stock_general = StockGeneralResearcher(ticker_symbol)
+    #stock_general = StockGeneralResearcher(ticker_symbol)
 
     trace_high = go.Scatter(
         x=dates,
@@ -29,7 +29,8 @@ def get_graph(ticker_symbol, high_data, low_data, dates):
     data = [trace_high, trace_low]
 
     layout = dict(
-        title='%s Stock Time Series Graph' % stock_general.get_company_name(),
+        #title='%s Stock Time Series Graph' % stock_general.get_company_name()'
+        title='%s Stock Time Series Graph' % ticker_symbol,
         xaxis=dict(
             rangeselector=dict(
                 buttons=list([
@@ -83,7 +84,7 @@ def get_custom_graph(ticker_symbol, past_months, high_data, low_data, dates):
     :param high_data: data for stock highs
     :param past_months: Number of months graph goes back.
     """
-    stock_general = StockGeneralResearcher(ticker_symbol)
+    #stock_general = StockGeneralResearcher(ticker_symbol)
 
     trace_high = go.Scatter(
         x=dates,
@@ -102,7 +103,8 @@ def get_custom_graph(ticker_symbol, past_months, high_data, low_data, dates):
     data = [trace_high, trace_low]
 
     layout = dict(
-        title='%s Stock Graph For Past %i Months' % (stock_general.get_company_name(), past_months),
+        title='%s Stock Graph For Past %i Months' % (ticker_symbol, past_months),
+        #title='Stock Graph For Past %i Months' % (past_months),
         xaxis=dict(
             rangeslider=dict(
                 visible=False

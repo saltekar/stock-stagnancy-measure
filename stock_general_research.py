@@ -15,18 +15,21 @@ class StockGeneralResearcher:
         """
         self.ticker_symbol = ticker_symbol
 
+        # Need new api to get this info
         url_general = 'https://api.iextrading.com/1.0/stock/%s/stats' % ticker_symbol
         url_price = 'https://api.iextrading.com/1.0/stock/%s/price' % ticker_symbol
         url_quote = 'https://api.iextrading.com/1.0/stock/%s/quote' % ticker_symbol
 
+
         context = ssl._create_unverified_context()
         general_request = urllib.request.urlopen(url_general, context=context)
+
+        #doesnt work
         price_request = urllib.request.urlopen(url_price, context=context)
+
         quote_request = urllib.request.urlopen(url_quote, context=context)
 
-        self.price = json.load(price_request)
         self.general = json.load(general_request)
-        self.quote = json.load(quote_request)
 
     def get_data(self, data_type):
         """
@@ -34,7 +37,6 @@ class StockGeneralResearcher:
         :param data_type: type of data ex. market cap
         """
         data = self.general
-        data.update(self.quote)
 
         list_data_nums = ['revenue', 'marketcap', 'grossProfit', 'EBITDA', 'cash', 'debt', 'sharesOutstanding',
                           'shortInterest']
