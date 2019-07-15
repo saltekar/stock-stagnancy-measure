@@ -11,12 +11,12 @@
       gtag('config', 'UA-136792272-1');
     </script>
 
-    <title>Stagnancy Report</title>
+    <title>Error</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}">
-    <meta property="og:url" content-="http://www.saltekar.xyz/stagnancy-researcher/about">
+    <meta property="og:url" content-="http://www.saltekar.xyz/stagnancy-measure/about">
     <meta property="og:description" content="Application provides a quantitative measure for the stagnancy of a stock.">
     <meta property="og:image" content="http://www.saltekar.xyz/static/about_page.png">
     <meta property="og:title" content="Stagnancy Measure">
@@ -38,19 +38,19 @@
                     <span class="icon-bar"></span>
                  <span class="icon-bar"></span>
                 </button>
-            <a class="navbar-brand" href="/stagnancy-researcher">
+            <a class="navbar-brand" href="/stagnancy-measure">
                 <img src="{{ url_for('static', filename='favicon.ico') }}" width="28" height="30">
             </a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li><a href="/stagnancy-researcher">Search</a></li>
+                    <li><a href="/stagnancy-measure">Search</a></li>
                     <li class="active"><a href="#">Report</a></li>
-                    <li><a href="/stagnancy-researcher/about">About</a></li>
+                    <li><a href="/stagnancy-measure/about">About</a></li>
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <form method="POST" action="/stagnancy-researcher" class="form-inline">
+                    <form method="POST" action="/stagnancy-measure" class="form-inline">
                             <div class="form-group mx-5">
                                 <label for="ticker_symbol" class="mx-2">Enter ticker symbol:</label>
                                 <input type="ticker_symbol" class="form-control" name="ticker_symbol" id="ticker_symbol">

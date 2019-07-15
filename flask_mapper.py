@@ -25,7 +25,7 @@ def resume():
     return render_template('resume.html')
 
 
-@app.route('/stagnancy-researcher', methods=['GET', 'POST'])
+@app.route('/stagnancy-measure', methods=['GET', 'POST'])
 def stock_researcher():
     if request.method == 'POST':
         ticker_symbol = request.form['ticker_symbol'].upper()
@@ -41,12 +41,12 @@ def stock_researcher():
         if past_months > 240 or past_months <= 0:
             return redirect(url_for('.error', error=RANGE_MONTHS_ERROR.format(past_months)))
 
-        return redirect('/stagnancy-researcher/result?ticker_symbol=%s&past_months=%i' % (ticker_symbol, past_months))
+        return redirect('stagnancy-measure/result?ticker_symbol=%s&past_months=%i' % (ticker_symbol, past_months))
 
     return render_template('stagnancy_researcher.html')
 
 
-@app.route('/stagnancy-researcher/result')
+@app.route('/stagnancy-measure/result')
 def result():
     ticker_symbol = request.args['ticker_symbol'].upper()
     past_months = int(request.args['past_months'])
@@ -80,12 +80,12 @@ def result():
                            graph_custom=Markup(div_custom_graph))
 
 
-@app.route('/stagnancy-researcher/about')
+@app.route('/stagnancy-measure/about')
 def about():
     return render_template('about.html')
 
 
-@app.route('/stagnancy-researcher/error')
+@app.route('/stagnancy-measure/error')
 def error():
     msg = request.args['error']
 
