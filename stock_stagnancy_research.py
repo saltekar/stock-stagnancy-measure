@@ -29,7 +29,7 @@ class StockStagnancyResearch:
         # API info
         url = "https://www.alphavantage.co/query"
         func = "TIME_SERIES_DAILY"
-        api_key = "SF9TWTH9FPEYUV8S"  # Go to https://www.alphavantage.co/ to get your own API key
+        api_key = ""  # Go to https://www.alphavantage.co/ to get your own API key
         output_size = "full"
 
         data = {"function": func,

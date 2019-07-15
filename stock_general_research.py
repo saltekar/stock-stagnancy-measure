@@ -140,7 +140,7 @@ class StockGeneralResearcher:
             self.data["dividendYield"] = summary["dividendYield"]["fmt"]
         if "fmt" in summary["exDividendDate"].keys():
             self.data["exDividendDate"] = summary["exDividendDate"]["fmt"]
-        if "fmt" in summary["trailingPE"].keys():
+        if "trailingPE" in summary.keys():
             self.data["peRatio"] = summary["trailingPE"]["fmt"]
         if "fmt" in summary["fiftyDayAverage"].keys():
             self.data["day50MovingAvg"] = summary["fiftyDayAverage"]["fmt"]
