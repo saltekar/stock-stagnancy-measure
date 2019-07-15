@@ -1,3 +1,4 @@
+import json
 import ssl
 import urllib
 
@@ -37,7 +38,7 @@ def stock_researcher():
         except ValueError:
             return redirect(url_for('.error', error=VALUE_MONTHS_ERROR.format(request.form['past_months'])))
 
-        if past_months > 240 or past_months == 0:
+        if past_months > 240 or past_months <= 0:
             return redirect(url_for('.error', error=RANGE_MONTHS_ERROR.format(past_months)))
 
         return redirect('/stagnancy-researcher/result?ticker_symbol=%s&past_months=%i' % (ticker_symbol, past_months))
@@ -55,8 +56,7 @@ def result():
     except KeyError:
         return redirect(url_for('.error', error=API_OVERLOAD))
 
-    # Need to fix this stock general. API that i used for that doesnt work
-    #stock_general = StockGeneralResearcher(ticker_symbol)
+    stock_general = StockGeneralResearcher(ticker_symbol)
 
     divs = get_graphs(ticker_symbol, past_months, stock_stagnancy)
     div_timeseries = divs[0]
@@ -64,24 +64,20 @@ def result():
 
     return render_template('result.html', ticker_symbol=stock_stagnancy.ticker_symbol, past_months=stock_stagnancy.months,
                            stagnancy_index=stock_stagnancy.get_stagnant_index(), avg_volume=stock_stagnancy.get_avg_volume(),
-                           price=stock_stagnancy.recent_price, company_name=ticker_symbol, graph_timeseries=Markup(div_timeseries),
+                           company_name=stock_general.get_data('companyName'), market_cap=stock_general.get_data('marketcap'),
+                           beta=stock_general.get_data('beta'), week52_change=stock_general.get_data('week52change'),
+                           week52_high=stock_general.get_data("week52high"), week52_low=stock_general.get_data("week52low"),
+                           dividend_yield=stock_general.get_data('dividendYield'), ex_dividend_date=stock_general.get_data('exDividendDate'),
+                           latest_eps=stock_general.get_data('latestEPS'), shares_outstanding=stock_general.get_data('sharesOutstanding'),
+                           float_shares=stock_general.get_data('floatShares'),
+                           ebitda=stock_general.get_data('EBITDA'), revenue=stock_general.get_data('revenue'),
+                           gross_profit=stock_general.get_data('grossProfit'), cash=stock_general.get_data('cash'),
+                           debt=stock_general.get_data('debt'),  short_ratio=stock_general.get_data('shortRatio'),
+                           price=stock_stagnancy.recent_price, pe_ratio=stock_general.get_data('peRatio'),
+                           day50_moving_avg=stock_general.get_data('day50MovingAvg'), day200_moving_avg=stock_general.get_data('day200MovingAvg'),
+                           revenue_per_share=stock_general.get_data('revenuePerShare'), return_assets=stock_general.get_data('returnOnAssets'),
+                           dividend_rate=stock_general.get_data('dividendRate'), graph_timeseries=Markup(div_timeseries),
                            graph_custom=Markup(div_custom_graph))
-
-    # return render_template('result.html', ticker_symbol=stock_stagnancy.ticker_symbol, past_months=stock_stagnancy.months,
-    #                        stagnancy_index=stock_stagnancy.get_stagnant_index(), avg_volume=stock_stagnancy.get_avg_volume(),
-    #                        company_name=stock_general.get_data('companyName'), market_cap=stock_general.get_data('marketcap'),
-    #                        beta=stock_general.get_data('beta'), week52_high=stock_general.get_data('week52high'),
-    #                        week52_low=stock_general.get_data('week52low'), short_interest=stock_general.get_data('shortInterest'),
-    #                        dividend_yield=stock_general.get_data('dividendYield'), ex_dividend_date=stock_general.get_data('exDividendDate'),
-    #                        latest_eps=stock_general.get_data('latestEPS'), shares_outstanding=stock_general.get_data('sharesOutstanding'),
-    #                        ebitda=stock_general.get_data('EBITDA'), revenue=stock_general.get_data('revenue'),
-    #                        gross_profit=stock_general.get_data('grossProfit'), cash=stock_general.get_data('cash'),
-    #                        debt=stock_general.get_data('debt'),  short_ratio=stock_general.get_data('shortRatio'),
-    #                        price=stock_general.get_price(), pe_ratio=stock_general.get_data('peRatio'),
-    #                        day50_moving_avg=stock_general.get_data('day50MovingAvg'), day200_moving_avg=stock_general.get_data('day200MovingAvg'),
-    #                        revenue_per_share=stock_general.get_data('revenuePerShare'), return_assets=stock_general.get_data('returnOnAssets'),
-    #                        dividend_rate=stock_general.get_data('dividendRate'), graph_timeseries=Markup(div_timeseries),
-    #                        graph_custom=Markup(div_custom_graph))
 
 
 @app.route('/stagnancy-researcher/about')
@@ -133,7 +129,7 @@ def is_valid(ticker_symbol):
     """
     Returns true if ticker_symbol is valid.
     """
-    url = 'https://api.iextrading.com/1.0/stock/%s/quote' % ticker_symbol
+    url = 'https://query2.finance.yahoo.com/v10/finance/quoteSummary/%s?modules=price' % ticker_symbol
 
     try:
         context = ssl._create_unverified_context()
