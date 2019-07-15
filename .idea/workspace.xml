@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61093931-b337-48ed-8d8b-60ee34ed46fd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/flask_mapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/flask_mapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/resume.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/resume.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/stagnancy_researcher.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/stagnancy_researcher.html" afterDir="false" />
-    </list>
+    <list default="true" id="61093931-b337-48ed-8d8b-60ee34ed46fd" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="flask_mapper.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="flask_mapper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flask_mapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="752">
-              <caret line="87" column="13" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
+            <state relative-caret-position="138">
+              <caret line="48" column="37" lean-forward="true" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -42,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stock_stagnancy_research.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="stock_stagnancy_research.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stock_stagnancy_research.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
+            <state relative-caret-position="291">
+              <caret line="32" column="28" lean-forward="true" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -232,13 +225,13 @@
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/stagnancy_graph.py" />
         <option value="$PROJECT_DIR$/stock_general_research.py" />
-        <option value="$PROJECT_DIR$/stock_stagnancy_research.py" />
         <option value="$PROJECT_DIR$/templates/about.html" />
         <option value="$PROJECT_DIR$/templates/result.html" />
         <option value="$PROJECT_DIR$/templates/resume.html" />
         <option value="$PROJECT_DIR$/flask_mapper.py" />
         <option value="$PROJECT_DIR$/templates/error.html" />
         <option value="$PROJECT_DIR$/templates/stagnancy_researcher.html" />
+        <option value="$PROJECT_DIR$/stock_stagnancy_research.py" />
       </list>
     </option>
   </component>
@@ -436,7 +429,7 @@
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.114583336" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.19546436" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.19546436" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Python Console" order="0" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
@@ -715,16 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock_stagnancy_research.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stock_general_research.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2354">
@@ -803,10 +786,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/flask_mapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="87" column="13" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
+        <state relative-caret-position="138">
+          <caret line="48" column="37" lean-forward="true" selection-start-line="48" selection-start-column="37" selection-end-line="48" selection-end-column="37" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stock_stagnancy_research.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="32" column="28" lean-forward="true" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

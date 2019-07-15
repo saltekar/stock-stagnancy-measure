@@ -28,13 +28,13 @@ def resume():
 @app.route('/stagnancy-measure', methods=['GET', 'POST'])
 def stock_researcher():
     if request.method == 'POST':
-        ticker_symbol = request.form['ticker_symbol'].upper()
+        ticker_symbol = request.form['ticker_symbol'].upper().strip()
 
         if is_valid(ticker_symbol) is False:
             return redirect(url_for('.error', error=VALUE_TICKER_ERROR.format(ticker_symbol)))
 
         try:
-            past_months = int(request.form['past_months'])
+            past_months = int(request.form['past_months'].strip())
         except ValueError:
             return redirect(url_for('.error', error=VALUE_MONTHS_ERROR.format(request.form['past_months'])))
 
@@ -48,8 +48,8 @@ def stock_researcher():
 
 @app.route('/stagnancy-measure/result')
 def result():
-    ticker_symbol = request.args['ticker_symbol'].upper()
-    past_months = int(request.args['past_months'])
+    ticker_symbol = request.args['ticker_symbol'].upper().strip()
+    past_months = int(request.args['past_months'].strip())
 
     try:
         stock_stagnancy = StockStagnancyResearch(ticker_symbol, past_months)
