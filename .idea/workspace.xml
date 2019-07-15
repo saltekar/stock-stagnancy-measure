@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61093931-b337-48ed-8d8b-60ee34ed46fd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/stock_general_research.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock_general_research.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock_stagnancy_research.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock_stagnancy_research.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,10 +25,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stock_general_research.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="stock_general_research.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stock_general_research.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
+            <state relative-caret-position="411">
               <caret line="140" column="52" selection-start-line="140" selection-start-column="52" selection-end-line="140" selection-end-column="52" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -37,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stock_stagnancy_research.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="stock_stagnancy_research.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/stock_stagnancy_research.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-456">
-              <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+            <state relative-caret-position="274">
+              <caret line="31" column="35" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="35" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -213,9 +213,9 @@
         <option value="$PROJECT_DIR$/stagnancy_graph.py" />
         <option value="$PROJECT_DIR$/flask_mapper.py" />
         <option value="$PROJECT_DIR$/templates/result.html" />
-        <option value="$PROJECT_DIR$/stock_stagnancy_research.py" />
         <option value="$PROJECT_DIR$/templates/about.html" />
         <option value="$PROJECT_DIR$/stock_general_research.py" />
+        <option value="$PROJECT_DIR$/stock_stagnancy_research.py" />
       </list>
     </option>
   </component>
@@ -769,22 +769,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock_stagnancy_research.py">
+    <entry file="file://$PROJECT_DIR$/stock_general_research.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-456">
-          <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+        <state relative-caret-position="411">
+          <caret line="140" column="52" selection-start-line="140" selection-start-column="52" selection-end-line="140" selection-end-column="52" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stock_general_research.py">
+    <entry file="file://$PROJECT_DIR$/stock_stagnancy_research.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="140" column="52" selection-start-line="140" selection-start-column="52" selection-end-line="140" selection-end-column="52" />
+        <state relative-caret-position="274">
+          <caret line="31" column="35" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="35" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
